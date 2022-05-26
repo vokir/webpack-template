@@ -1,0 +1,51 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "watch": "webpack --watch --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "js",
+    "webpack",
+    "babel",
+    "pug",
+    "scss"
+  ],
+  "author": "Vladimir Yaroslavcev",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
+    "@babel/cli": "^7.17.10",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.16.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.6.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "core-js": "^3.22.7",
+    "normalize.css": "^8.0.1",
+    "swiper": "^8.1.6"
+  }
+}
