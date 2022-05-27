@@ -1,10 +1,4 @@
-[development]
-last 1 chrome version
-last 1 firefox version
-last 1 safari version
-last 1 ie version
-
-[production]
->0.2%
-not dead
+last 2 versions
+>0.5%
 not op_mini all
+ie >= 11

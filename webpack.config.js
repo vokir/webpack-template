@@ -30,40 +30,29 @@ module.exports = (env, argv) => {
       index: './js/index.js'
     },
     output: {
-      filename: 'js/[name].min.js',
+      filename: 'js/scripts.min.js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
       assetModuleFilename: 'assets/[name][ext]'
     },
-    stats: 'errors-only',
     devtool: 'source-map',
     target: devMode ? 'web' : 'browserslist',
     devServer: {
       static: './dist',
       hot: true,
-      liveReload: true,
+      open: true,
+      liveReload: false,
       watchFiles: {
         paths: ['src/pug']
       }
     },
     optimization: {
-      moduleIds: 'deterministic',
-      runtimeChunk: 'single',
-      splitChunks: {
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all'
-          }
-        }
-      }
+      moduleIds: 'deterministic'
     },
     module: {
       rules: [
         {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          test: /\.js$/,
           use: {
             loader: 'babel-loader'
           }
