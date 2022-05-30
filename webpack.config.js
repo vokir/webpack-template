@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
       static: './dist',
       hot: true,
       open: true,
-      liveReload: false,
+      liveReload: true,
       watchFiles: {
         paths: ['src/pug']
       }
@@ -66,7 +66,7 @@ module.exports = (env, argv) => {
         {
           test: /\.(s[ac]|c)ss$/i,
           use: [
-            MiniCssExtractPlugin.loader,
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
             'sass-loader'
