@@ -9,9 +9,13 @@
   font-family: Roboto, serif;
 }
 
+.icon {
+  width: 128px;
+  height: 128px;
+}
+
 body {
   min-width: 320px;
-  background-color: var(--color);
   box-sizing: border-box;
   overflow-x: hidden;
 }

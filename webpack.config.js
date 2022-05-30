@@ -2,6 +2,7 @@ const path = require('path')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const fs = require('fs')
 
 function generateHtmlPlugins (templateDir) {
@@ -73,11 +74,23 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.(png|jpe?g|gif|svg)$/i,
+          test: /\.(png|jpe?g|gif)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'images/[name][ext]'
           }
+        },
+        {
+          test: /\.svg$/i,
+          include: /.*_sprite\.svg/,
+          use: [
+            {
+              loader: 'svg-sprite-loader',
+              options: {
+                publicPath: '/'
+              }
+            }
+          ]
         },
         {
           test: /\.(mp4)$/i,
@@ -103,6 +116,9 @@ module.exports = (env, argv) => {
       new ESLintPlugin(),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].[contenthash].css' : '[name].css'
+      }),
+      new SpriteLoaderPlugin({
+        plainSprite: true
       })
     ].concat(htmlPlugins)
   }
