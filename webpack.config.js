@@ -49,6 +49,12 @@ module.exports = (env, argv) => {
     optimization: {
       moduleIds: 'deterministic'
     },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+        '@img': path.resolve(__dirname, 'src/images/')
+      }
+    },
     module: {
       rules: [
         {
