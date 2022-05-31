@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
       open: true,
       liveReload: true,
       watchFiles: {
-        paths: ['src/pug']
+        paths: ['src/pug', 'src/images']
       }
     },
     optimization: {
